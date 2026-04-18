@@ -1,3 +1,4 @@
+using YetAnotherStore.Api.Middlewares;
 using YetAnotherStore.Core;
 using YetAnotherStore.Infrastructure;
 
@@ -8,6 +9,8 @@ builder.Services.AddInfrastructureServices();
 
 builder.Services.AddControllers();
 var app = builder.Build();
+
+app.UseExceptionHandlingMiddleware();
 
 app.UseRouting();
 
