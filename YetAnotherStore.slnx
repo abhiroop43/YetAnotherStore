@@ -1,0 +1,5 @@
+<Solution>
+  <Project Path="YetAnotherStore.Api/YetAnotherStore.Api.csproj" />
+  <Project Path="YetAnotherStore.Core/YetAnotherStore.Core.csproj" />
+  <Project Path="YetAnotherStore.Infrastructure/YetAnotherStore.Infrastructure.csproj" />
+</Solution>
