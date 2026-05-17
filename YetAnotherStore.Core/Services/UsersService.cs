@@ -33,7 +33,7 @@ internal class UsersService(IUsersRepository usersRepository) : IUsersService
             Email = registerRequest.Email,
             FullName = registerRequest.FullName,
             Password = registerRequest.Password,
-            Gender = nameof(registerRequest.Gender),
+            Gender = registerRequest.Gender.ToString(),
         };
 
         var registeredUser = await usersRepository.AddUserAsync(user);
