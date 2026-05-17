@@ -1,4 +1,6 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
+using YetAnotherStore.Core.ServiceContracts;
+using YetAnotherStore.Core.Services;
 
 namespace YetAnotherStore.Core;
 
@@ -11,6 +13,7 @@ public static class DependencyInjection
     /// <returns>The same instance of <see cref="IServiceCollection"/> with the core services registered.</returns>
     public static IServiceCollection AddCoreServices(this IServiceCollection services)
     {
+        services.AddTransient<IUsersService, UsersService>();
         return services;
     }
 }
