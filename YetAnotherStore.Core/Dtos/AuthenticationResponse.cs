@@ -7,4 +7,8 @@ public record AuthenticationResponse(
     string? Gender,
     string? Token,
     bool Success
-);
+)
+{
+    public AuthenticationResponse()
+        : this(Guid.Empty, default, default, default, default, default) { }
+}

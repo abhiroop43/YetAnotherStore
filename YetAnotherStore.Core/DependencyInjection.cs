@@ -1,4 +1,5 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
+using YetAnotherStore.Core.Mappers;
 using YetAnotherStore.Core.ServiceContracts;
 using YetAnotherStore.Core.Services;
 
@@ -14,6 +15,7 @@ public static class DependencyInjection
     public static IServiceCollection AddCoreServices(this IServiceCollection services)
     {
         services.AddTransient<IUsersService, UsersService>();
+        services.AddAutoMapper(cfg => { }, typeof(ApplicationUserMappingProfile).Assembly);
         return services;
     }
 }
