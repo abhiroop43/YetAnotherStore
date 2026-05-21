@@ -1,6 +1,4 @@
-﻿using YetAnotherStore.Core.Dtos;
-
-namespace YetAnotherStore.Core.ServiceContracts;
+﻿namespace YetAnotherStore.Core.ServiceContracts;
 
 /// <summary>
 /// Defines methods for authenticating and registering users.

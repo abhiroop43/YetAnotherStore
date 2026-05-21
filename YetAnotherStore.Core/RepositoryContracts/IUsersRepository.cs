@@ -1,6 +1,4 @@
-﻿using YetAnotherStore.Core.Entities;
-
-namespace YetAnotherStore.Core.RepositoryContracts;
+﻿namespace YetAnotherStore.Core.RepositoryContracts;
 
 /// <summary>
 /// Provides asynchronous operations to add and retrieve ApplicationUser instances from a backing store.

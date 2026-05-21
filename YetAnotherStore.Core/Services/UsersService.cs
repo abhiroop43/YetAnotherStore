@@ -1,8 +1,4 @@
-﻿using AutoMapper;
-using YetAnotherStore.Core.Dtos;
-using YetAnotherStore.Core.Entities;
-using YetAnotherStore.Core.RepositoryContracts;
-using YetAnotherStore.Core.ServiceContracts;
+﻿using YetAnotherStore.Core.RepositoryContracts;
 
 namespace YetAnotherStore.Core.Services;
 
