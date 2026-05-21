@@ -5,8 +5,8 @@ using YetAnotherStore.Infrastructure;
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddCoreServices();
-builder.Services.AddInfrastructureServices();
+builder.Services.AddCoreServices(builder.Configuration);
+builder.Services.AddInfrastructureServices(builder.Configuration);
 
 builder
     .Services.AddControllers()

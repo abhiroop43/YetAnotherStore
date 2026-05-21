@@ -20,27 +20,10 @@ internal class UsersService(IUsersRepository usersRepository, IMapper mapper) : 
         };
 
         return response;
-
-        // return new AuthenticationResponse(
-        //     user.UserId,
-        //     user.Email,
-        //     user.FullName,
-        //     user.Gender,
-        //     "dummy",
-        //     true
-        // );
     }
 
     public async Task<AuthenticationResponse?> RegisterAsync(RegisterRequest registerRequest)
     {
-        // var user = new ApplicationUser
-        // {
-        //     Email = registerRequest.Email,
-        //     FullName = registerRequest.FullName,
-        //     Password = registerRequest.Password,
-        //     Gender = registerRequest.Gender.ToString(),
-        // };
-
         var user = mapper.Map<ApplicationUser>(registerRequest);
 
         var registeredUser = await usersRepository.AddUserAsync(user);
@@ -55,14 +38,5 @@ internal class UsersService(IUsersRepository usersRepository, IMapper mapper) : 
             Success = true,
             Token = "token",
         };
-
-        // return new AuthenticationResponse(
-        //     registeredUser.UserId,
-        //     registeredUser.Email,
-        //     registeredUser.FullName,
-        //     registeredUser.Gender,
-        //     "dummy",
-        //     true
-        // );
     }
 }

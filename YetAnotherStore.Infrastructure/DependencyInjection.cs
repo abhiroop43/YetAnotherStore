@@ -1,5 +1,7 @@
-﻿using Microsoft.Extensions.DependencyInjection;
+﻿using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
 using YetAnotherStore.Core.RepositoryContracts;
+using YetAnotherStore.Infrastructure.DbContext;
 using YetAnotherStore.Infrastructure.Repositories;
 
 namespace YetAnotherStore.Infrastructure;
@@ -11,9 +13,13 @@ public static class DependencyInjection
     /// </summary>
     /// <param name="services">The service collection to which the infrastructure services will be added. Cannot be null.</param>
     /// <returns>The same instance of <see cref="IServiceCollection"/> with the infrastructure services registered.</returns>
-    public static IServiceCollection AddInfrastructureServices(this IServiceCollection services)
+    public static IServiceCollection AddInfrastructureServices(
+        this IServiceCollection services,
+        IConfiguration configuration
+    )
     {
         services.AddTransient<IUsersRepository, UsersRepository>();
+        services.AddTransient<ApplicationDbContext>();
         return services;
     }
 }
