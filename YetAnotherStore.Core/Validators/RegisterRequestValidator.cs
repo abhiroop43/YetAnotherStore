@@ -23,5 +23,9 @@ public class RegisterRequestValidator : AbstractValidator<RegisterRequest>
         RuleFor(x => x.FullName)
             .MaximumLength(100)
             .WithMessage("{PropertyName} cannot exceed {MaxLength} characters");
+
+        RuleFor(x => x.Gender)
+            .IsInEnum()
+            .WithMessage("{PropertyName} value {PropertyValue} is invalid");
     }
 }
