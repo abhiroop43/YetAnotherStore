@@ -36,7 +36,7 @@ namespace YetAnotherStore.Api.Controllers
 
             var authResponse = await usersService.LoginAsync(loginRequest);
 
-            if (authResponse?.Success == false)
+            if (authResponse == null || authResponse.Success == false)
             {
                 return Unauthorized(authResponse);
             }

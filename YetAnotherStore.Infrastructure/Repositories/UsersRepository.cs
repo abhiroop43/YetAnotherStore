@@ -22,13 +22,16 @@ internal class UsersRepository(ApplicationDbContext dbContext) : IUsersRepositor
 
     public async Task<ApplicationUser?> GetUserAsync(string? email, string? password)
     {
-        return new ApplicationUser
-        {
-            UserId = Guid.NewGuid(),
-            Email = email,
-            Password = password,
-            FullName = "John Doe",
-            Gender = nameof(GenderOptions.Male),
-        };
+        var query =
+            "SELECT * from public.\"users\" WHERE \"email\"=@Email AND \"password\"=@Password";
+
+        var parameters = new { Email = email, Password = password };
+
+        var user = await dbContext.DbConnection.QueryFirstOrDefaultAsync<ApplicationUser>(
+            query,
+            parameters
+        );
+
+        return user;
     }
 }
