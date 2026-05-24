@@ -1,4 +1,10 @@
+global using System.Reflection;
 global using AutoMapper;
+global using FluentValidation;
+global using FluentValidation.AspNetCore;
+global using Microsoft.Extensions.Configuration;
+global using Microsoft.Extensions.DependencyInjection;
 global using YetAnotherStore.Core.Dtos;
 global using YetAnotherStore.Core.Entities;
 global using YetAnotherStore.Core.ServiceContracts;
+global using YetAnotherStore.Core.Services;

@@ -1,9 +1,4 @@
-﻿using System.Reflection;
-using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.DependencyInjection;
-using YetAnotherStore.Core.Services;
-
-namespace YetAnotherStore.Core;
+﻿namespace YetAnotherStore.Core;
 
 public static class DependencyInjection
 {
@@ -25,6 +20,8 @@ public static class DependencyInjection
             },
             Assembly.GetExecutingAssembly()
         );
+        services.AddValidatorsFromAssembly(Assembly.GetExecutingAssembly());
+        services.AddFluentValidationAutoValidation();
         return services;
     }
 }
